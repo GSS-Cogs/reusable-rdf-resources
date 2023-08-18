@@ -1,0 +1,112 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en",
+            "@base": "https://purl.org/csv-cubed/resources/attributes/sdmx-obs-status"
+        }
+    ],
+    "url": "sdmx-obs-status.csv",
+    "@type": [
+        "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+        "http://www.w3.org/2000/01/rdf-schema#Resource",
+        "http://www.w3.org/ns/dcat#Resource",
+        "http://www.w3.org/ns/prov#Entity",
+        "http://www.w3.org/ns/dcat#Dataset"
+    ],
+    "http://purl.org/dc/terms/identifier": [
+        {
+            "@value": "SDMX Code list for Observation Statuses"
+        }
+    ],
+    "http://purl.org/dc/terms/title": [
+        {
+            "@language": "en",
+            "@value": "SDMX Code list for Observation Statuses"
+        }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+            "@language": "en",
+            "@value": "A code list to mark up statistical observations, missing, imputed, modelled, or otherwise usually footnoted"
+        }
+    ],
+    "http://purl.org/dc/terms/description": [
+        {
+            "@type": "https://www.w3.org/ns/iana/media-types/text/markdown#Resource",
+            "@value": "This code list provides coded information about the \"status\" of an observation (with respect to events such as the ones reflected in the codes composing the code list). The observation status provides information on 1) the quality of a value or 2) unusual or missing values. The codes in this list are known to be heterogeneous, that is they represent different concepts. They are put together in one code list for practical and historical implementation reasons."
+        }
+    ],
+    "http://purl.org/dc/terms/license": [
+        {
+            "@id": "Copyright 2019, All Rights Reserved"
+        }
+    ],
+    "http://purl.org/dc/terms/creator": [
+        {
+            "@id": "https://sdmx.org/"
+        }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+        {
+            "@id": "https://www.gov.uk/government/organisations/office-for-national-statistics"
+        }
+    ],
+    "http://purl.org/dc/terms/issued": [
+        {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "@value": "2019-03-19"
+        }
+    ],
+
+    "http://purl.org/dc/terms/modified": [
+        {
+            "@type": "http://www.w3.org/2001/XMLSchema#dateTime",
+            "@value": "2023-03-07"
+        }
+    ],
+    "tables": [
+        {
+            "url": "",
+            "tableSchema": {
+                "columns": [
+                    {
+                        "titles": "Identifier",
+                        "name": "identifier",
+                        "required": true,
+                        "suppressOutput": true
+                    },
+                    {
+                        "titles": "Label",
+                        "name": "label",
+                        "datatype": "string",
+                        "lang": "en",
+                        "propertyUrl": "rdfs:label",
+                        "required": true
+                    },
+                    {
+                        "titles": "Description",
+                        "name": "description",
+                        "datatype": "string",
+                        "lang": "en",
+                        "propertyUrl": "rdfs:comment",
+                        "required": false
+                    },
+                    {
+                        "name": "virt_type",
+                        "virtual": true,
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "rdfs:Property"
+                    },
+                    {
+                        "name": "virt_type_qb",
+                        "virtual": true,
+                        "propertyUrl": "rdf:type",
+                        "valueUrl": "http://purl.org/linked-data/cube#AttributeProperty"
+                    }
+                ]
+            },
+            "aboutUrl": "#{+identifier}"
+        }
+    ]
+}

@@ -1,0 +1,105 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en",
+            "@base": "https://purl.org/csv-cubed/resources/attributes/af-obs-marker"
+        }
+    ],
+    "@id": "#definition",
+    "url": "",
+    "rdfs:seeAlso": [
+        {
+            "@id": "#definition",
+            "@type": [
+                "http://www.w3.org/2004/02/skos/core#ConceptScheme",
+                "http://www.w3.org/2000/01/rdf-schema#Resource",
+                "http://www.w3.org/ns/dcat#Resource",
+                "http://www.w3.org/ns/prov#Entity",
+                "http://www.w3.org/ns/dcat#Dataset"
+            ]
+        }
+    ],
+    "http://purl.org/dc/terms/title": [
+        {
+            "@value": "Analyst Function Code list for Observation Statuses"
+        }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#comment": [
+        {
+            "@value": "This code list defines observation statuses recommended by the Government Analyst Function"
+        }
+    ],
+    "http://purl.org/dc/terms/description": [
+        {
+            "@type": "https://www.w3.org/ns/iana/media-types/text/markdown#Resource",
+            "@value": "The Analyst Function has provided guidance on a consistent shorthand to use in data publications to mark up statistical observations. This code list provides the codes and their definitions. Manually captured from [https://analysisfunction.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/#section-6](https://analysisfunction.civilservice.gov.uk/policy-store/symbols-in-tables-definitions-and-help/#section-6) on 2023-03-06"
+        }
+    ],
+    "http://purl.org/dc/terms/license": [
+        {
+            "@id": "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+        }
+    ],
+    "http://purl.org/dc/terms/creator": [
+        {
+            "@id": "https://analysisfunction.civilservice.gov.uk"
+        }
+    ],
+    "http://purl.org/dc/terms/publisher": [
+        {
+            "@id": "https://www.gov.uk/government/organisations/office-for-national-statistics"
+        }
+    ],
+    "http://purl.org/dc/terms/issued": [
+        {
+            "@type": "http://www.w3.org/2001/XMLSchema#date",
+            "@value": "2022-01-11"
+        }
+    ],
+    "http://purl.org/dc/terms/modified": [
+        {
+            "@type": "http://www.w3.org/2001/XMLSchema#date",
+            "@value": "2023-03-07"
+        }
+    ],
+    "tableSchema": {
+        "columns": [
+            {
+                "titles": "identifier",
+                "name": "identifier",
+                "required": true,
+                "suppressOutput": true
+            },
+            {
+                "titles": "label",
+                "name": "label",
+                "datatype": "string",
+                "lang": "en",
+                "propertyUrl": "rdfs:label",
+                "required": true
+            },
+            {
+                "titles": "description",
+                "name": "description",
+                "datatype": "string",
+                "lang": "en",
+                "propertyUrl": "rdfs:comment",
+                "required": false
+            },
+            {
+                "name": "virt_type",
+                "virtual": true,
+                "propertyUrl": "rdf:type",
+                "valueUrl": "rdfs:Property"
+            },
+            {
+                "name": "virt_type_qb",
+                "virtual": true,
+                "propertyUrl": "rdf:type",
+                "valueUrl": "http://www.w3.org/2004/02/skos/core#Concept"
+            }
+        ]
+    },
+    "aboutUrl": "#{+identifier}"
+}
